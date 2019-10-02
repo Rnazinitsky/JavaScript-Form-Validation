@@ -43,11 +43,23 @@
 <script>
 function validateForm(){
 	var firstname= document.forms["customerForm"]["firstname"].value;
+
 	var lastname= document.forms["customerForm"]["lastname"].value;
+
 	var email= document.forms["customerForm"]["e-mail"].value;
-	if (firstname==""||lastname==""||email=""){
-	alert("Please ensure that all fields are filled out before submitting.");
-	return false;}
+	if (firstname=="" && lastname=="" && email=="")
+	{
+		alert("Please ensure that the form is actually filled out before submitting.");
+		return false;}
+	else if (firstname==""){
+		alert("The customer first name needs be filled out.");
+		return false;}
+	else if (lastname==""){
+		alert("The customer's last name needs to be filled out.");
+		return false;}
+	else if (email==""){
+		alert("The e-mail address needs to be filled out.");
+		return false;}
 }
 </script>
 </html>
