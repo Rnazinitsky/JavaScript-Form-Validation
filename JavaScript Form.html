@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- 	Author:Robert Nazinitsky>
+	Class: ISM4300
+	Date: 10/1/19
+<!      Description: Practice validating forms-->
+
+
+	<title>HTML-Basics</title>
+	<meta charset="UTF-8">
+	<meta name="Keywords" content="HTML,practice,learning,programming,fun,how-to,USF">
+	
+<link rel="stylesheet" href="JavaScript Form.css">
+</head>
+<body>
+<h1 title="This form is used to enter customer information."> Customer Information<h1>
+<hr>
+<p> Welcome to the customer information submission form. Please enter the correct information for each customer into the designated input boxes and click submit. Thank you.</p>
+<form name="customerForm" onsubmit="return validateForm()" method="post">
+<fieldset>
+    <legend>Customer information:</legend>
+  	First name:<br>
+  	<input type="text" name="firstname" value="">
+  	<br>
+ 	Last name:<br>
+  	<input type="text" name="lastname" value="">
+	<br>
+	E-mail Address:<br>
+  	<input type="text" name="e-mail" value="">
+ 	<br>
+	<input type="submit" title="Submits the information entered above." 			value="Submit">
+</fieldset>
+
+</form>
+<br>
+<hr>
+</body>
+<footer>
+<p1><em>This page was created by Robert Nazinitsky, while attending the <a href="https://www.usf.edu/">University of South Florida</a> in 2019.<em></p1>
+</footer>
+<script>
+function validateForm(){
+	var firstname= document.forms["customerForm"]["firstname"].value;
+	var lastname= document.forms["customerForm"]["lastname"].value;
+	var email= document.forms["customerForm"]["e-mail"].value;
+	if (firstname==""||lastname==""||email=""){
+	alert("Please ensure that all fields are filled out before submitting.");
+	return false;}
+}
+</script>
+</html>
